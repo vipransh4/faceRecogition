@@ -64,7 +64,7 @@ onButtonSubmit = () => {
     const input = this.state.input;
     this.setState({ imageUrl: input });
     
-    fetch('http://localhost:4000/clarifai', {
+    fetch('https://smart-brain-api-yqte.onrender.com/clarifai', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ input: input })
@@ -78,7 +78,7 @@ onButtonSubmit = () => {
 
         this.displayFaceBox(this.calculateFaceLocation(data));
 
-        return fetch('http://localhost:4000/image', {
+        return fetch('https://smart-brain-api-yqte.onrender.com/image', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ id: this.state.user.id })
